@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Calypso";
+  src: url("/fonts/calypso.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
+@layer base {
+  * {
+    transition: all 0.5s;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif, system-ui;
+  }
+}
