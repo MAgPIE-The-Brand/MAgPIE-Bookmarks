@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: '/images/logo/logo-with-bg.png' },
         { name: 'twitter:card', content: 'summary' },
         { name: 'google-site-verification', content: '' }
-      
+
       ],
       link: [
         { rel: 'icon', type: 'image/ico', href: '/favicon.ico' },
@@ -37,9 +37,29 @@ export default defineNuxtConfig({
       nodeVersion: '18',
     }
   },
+
+  gtag: {
+    id: ''
+  },
+
+  nodemailer: {
+    from: '"MAgPIE Bookmarks"',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: '',
+      pass: '',
+    },
+  },
+
   tailwindcss: {
     cssPath: 'assets/scss/tailwind.scss',
     configPath: 'tailwind.config.js',
   },
-  modules: ['@nuxtjs/tailwindcss']
+  mdi: {
+    componentName: 'MdiIcon',
+    defaultSize: '1em'
+  },
+  modules: ["@nuxt/image", '@pinia/nuxt', "@nuxtjs/sitemap", "nuxt-gtag", "@nuxtjs/seo", '@nuxtjs/tailwindcss', 'nuxt-mdi',]
 })

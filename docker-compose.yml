@@ -1,0 +1,25 @@
+services:
+  nuxt:
+    build:
+      context: .
+    image: nuxt_dev
+    container_name: nuxt_dev
+    command: npm run dev
+    volumes:
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    tty: true
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+
+        - action: rebuild
+          path: nuxt.config.ts
+          target: /app
+
+        - action: rebuild
+          path: package.json
+          target: /app
